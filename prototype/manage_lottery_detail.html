@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽奖管理详情</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --td-brand-color: #0052d9; --td-bg-color-container: #ffffff; --td-text-color-primary: rgba(0, 0, 0, 0.9); --td-text-color-placeholder: rgba(0, 0, 0, 0.25); --td-border-color: #e7e7e7; --td-radius-default: 8px; }
+        body { background-color: #f5f5f5; font-family: sans-serif; }
+        .t-nav { display: flex; align-items: center; justify-content: space-between; background-color: white; padding: 10px 16px; border-bottom: 1px solid var(--td-border-color); }
+        .t-nav__title { font-size: 18px; font-weight: 600; }
+        .t-cell-group { background-color: white; margin-top: 12px; }
+        .t-cell { display: flex; align-items: center; padding: 16px; border-bottom: 1px solid var(--td-border-color); }
+        .t-cell:last-child { border-bottom: none; }
+        .t-cell__title { min-width: 90px; color: var(--td-text-color-primary); }
+        .t-input { flex-grow: 1; border: none; outline: none; }
+        .grid-container { display: grid; gap: 8px; padding: 16px; }
+        .grid-item { background-color: #f0f0f0; border-radius: var(--td-radius-default); aspect-ratio: 1 / 1; position: relative; }
+        .grid-item input { width: 100%; height: 100%; text-align: center; background: transparent; border: none; outline: none; font-size: 14px; padding: 4px; }
+        .grid-item--opened { background-color: #e7e7e7; }
+        .grid-item--opened .status { position: absolute; bottom: 4px; left: 0; right: 0; text-align: center; font-size: 10px; color: rgba(0,0,0,0.4); }
+        .t-footer { padding: 16px; background-color: #f5f5f5; }
+        .t-button { width: 100%; background-color: var(--td-brand-color); color: white; text-align: center; padding: 14px; border-radius: var(--td-radius-default); font-size: 16px; }
+    </style>
+</head>
+<body class="flex flex-col h-full">
+    <header class="t-nav">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        <h1 class="t-nav__title">管理：年会终极抽奖</h1>
+        <div></div>
+    </header>
+
+    <main class="flex-grow overflow-y-auto">
+        <div class="px-4 pt-4 text-sm text-gray-500">格子内容 (可修改未开奖格子)</div>
+        <div class="grid-container grid-cols-4">
+            <div class="grid-item grid-item--opened">
+                <input value="PS5" disabled class="text-gray-500"/>
+                <div class="status">已开奖</div>
+            </div>
+            <div class="grid-item"><input value="Switch"/></div>
+            <div class="grid-item grid-item--opened">
+                <input value="谢谢参与" disabled class="text-gray-500"/>
+                <div class="status">已开奖</div>
+            </div>
+            <div class="grid-item"><input value="蓝牙音箱"/></div>
+            <div class="grid-item"><input value="加湿器"/></div>
+            <div class="grid-item grid-item--opened">
+                <input value="阳光普照" disabled class="text-gray-500"/>
+                <div class="status">已开奖</div>
+            </div>
+            <div class="grid-item"><input value="拍立得"/></div>
+            <div class="grid-item"><input value="键盘"/></div>
+        </div>
+
+        <div class="t-cell-group">
+            <div class="t-cell">
+                <div class="t-cell__title">冷却时间</div>
+                <input type="text" class="t-input" value="24小时">
+            </div>
+        </div>
+    </main>
+
+    <footer class="t-footer">
+        <button class="t-button">确认修改</button>
+    </footer>
+</body>
+</html>

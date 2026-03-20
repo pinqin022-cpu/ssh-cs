@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开奖记录管理</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --td-text-color-primary: rgba(0, 0, 0, 0.9); --td-text-color-secondary: rgba(0, 0, 0, 0.4); --td-border-color: #e7e7e7; --td-brand-color: #0052d9; }
+        body { background-color: #f5f5f5; font-family: sans-serif; }
+        .t-nav { display: flex; align-items: center; justify-content: space-between; background-color: white; padding: 10px 16px; border-bottom: 1px solid var(--td-border-color); }
+        .t-nav__title { font-size: 18px; font-weight: 600; }
+        .t-list { background-color: white; margin-top: 12px; }
+        .t-list-item { padding: 16px; border-bottom: 1px solid var(--td-border-color); display: flex; flex-direction: column; gap: 4px; }
+        .t-list-item:last-child { border-bottom: none; }
+        .t-list-item__header { display: flex; justify-content: space-between; align-items: center; }
+        .t-list-item__title { font-size: 16px; color: var(--td-text-color-primary); }
+        .t-list-item__time { font-size: 14px; color: var(--td-text-color-secondary); }
+        .t-list-item__content { font-size: 15px; color: var(--td-text-color-primary); padding-top: 8px; }
+        .t-list-item__content span { color: var(--td-brand-color); font-weight: 500; }
+    </style>
+</head>
+<body class="flex flex-col h-full">
+    <header class="t-nav">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        <h1 class="t-nav__title">开奖记录管理</h1>
+        <div></div>
+    </header>
+
+    <main class="flex-grow overflow-y-auto">
+        <div class="t-list">
+            <div class="t-list-item">
+                <div class="t-list-item__header">
+                    <div class="t-list-item__title">年会终极抽奖</div>
+                    <div class="t-list-item__time">2026-03-18 14:05</div>
+                </div>
+                <div class="t-list-item__content">抽中内容: <span>Switch Oled</span></div>
+            </div>
+            <div class="t-list-item">
+                <div class="t-list-item__header">
+                    <div class="t-list-item__title">年会终极抽奖</div>
+                    <div class="t-list-item__time">2026-03-18 14:02</div>
+                </div>
+                <div class="t-list-item__content">抽中内容: <span>阳光普照奖</span></div>
+            </div>
+             <div class="t-list-item">
+                <div class="t-list-item__header">
+                    <div class="t-list-item__title">周末吃啥大转盘</div>
+                    <div class="t-list-item__time">2026-03-15 12:00</div>
+                </div>
+                <div class="t-list-item__content">抽中内容: <span>海底捞</span></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

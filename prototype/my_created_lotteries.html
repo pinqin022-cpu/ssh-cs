@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我发起的抽奖</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --td-text-color-primary: rgba(0, 0, 0, 0.9); --td-text-color-secondary: rgba(0, 0, 0, 0.4); --td-border-color: #e7e7e7; --td-success-color: #00a870; --td-gray-color: #999999; }
+        body { background-color: #f5f5f5; font-family: sans-serif; }
+        .t-nav { display: flex; align-items: center; justify-content: space-between; background-color: white; padding: 10px 16px; border-bottom: 1px solid var(--td-border-color); }
+        .t-nav__title { font-size: 18px; font-weight: 600; }
+        .t-list { background-color: white; margin-top: 12px; }
+        .t-list-item { padding: 16px; border-bottom: 1px solid var(--td-border-color); display: flex; justify-content: space-between; align-items: center; }
+        .t-list-item:last-child { border-bottom: none; }
+        .t-list-item__content { display: flex; flex-direction: column; }
+        .t-list-item__title { font-size: 16px; color: var(--td-text-color-primary); margin-bottom: 4px; }
+        .t-list-item__description { font-size: 14px; color: var(--td-text-color-secondary); }
+        .t-tag { padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+        .t-tag--success { background-color: #e6f6ef; color: var(--td-success-color); }
+        .t-tag--gray { background-color: #f0f0f0; color: var(--td-gray-color); }
+    </style>
+</head>
+<body class="flex flex-col h-full">
+    <header class="t-nav">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        <h1 class="t-nav__title">我发起的抽奖</h1>
+        <div></div>
+    </header>
+
+    <main class="flex-grow overflow-y-auto">
+        <div class="t-list">
+            <div class="t-list-item">
+                <div class="t-list-item__content">
+                    <div class="t-list-item__title">年会终极抽奖</div>
+                    <div class="t-list-item__description">发起时间: 2026-03-18 14:00</div>
+                </div>
+                <span class="t-tag t-tag--success">进行中</span>
+            </div>
+            <div class="t-list-item">
+                <div class="t-list-item__content">
+                    <div class="t-list-item__title">周末吃啥大转盘</div>
+                    <div class="t-list-item__description">发起时间: 2026-03-15 11:30</div>
+                </div>
+                <span class="t-tag t-tag--gray">已结束</span>
+            </div>
+            <div class="t-list-item">
+                <div class="t-list-item__content">
+                    <div class="t-list-item__title">家务分工抽签</div>
+                    <div class="t-list-item__description">发起时间: 2026-03-12 20:00</div>
+                </div>
+                <span class="t-tag t-tag--gray">已结束</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

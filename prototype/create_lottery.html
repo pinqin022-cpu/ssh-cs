@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建抽奖</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --td-brand-color: #0052d9;
+            --td-bg-color-container: #ffffff;
+            --td-text-color-primary: rgba(0, 0, 0, 0.9);
+            --td-text-color-placeholder: rgba(0, 0, 0, 0.25);
+            --td-border-color: #e7e7e7;
+            --td-radius-default: 8px;
+        }
+        body { background-color: #f5f5f5; font-family: sans-serif; }
+        .t-nav { display: flex; align-items: center; justify-content: space-between; background-color: white; padding: 10px 16px; border-bottom: 1px solid var(--td-border-color); }
+        .t-nav__title { font-size: 18px; font-weight: 600; }
+        .t-cell-group { background-color: white; margin-top: 12px; }
+        .t-cell { display: flex; align-items: center; padding: 16px; border-bottom: 1px solid var(--td-border-color); }
+        .t-cell:last-child { border-bottom: none; }
+        .t-cell__title { min-width: 90px; color: var(--td-text-color-primary); }
+        .t-input { flex-grow: 1; border: none; outline: none; }
+        .t-input::placeholder { color: var(--td-text-color-placeholder); }
+        .t-tag { background-color: #f0f3ff; color: var(--td-brand-color); padding: 4px 8px; border-radius: 4px; margin-right: 8px; font-size: 14px; }
+        .t-tag--active { background-color: var(--td-brand-color); color: white; }
+        .grid-container { display: grid; gap: 8px; padding: 16px; }
+        .grid-item { background-color: #f0f0f0; border-radius: var(--td-radius-default); aspect-ratio: 1 / 1; }
+        .grid-item input { width: 100%; height: 100%; text-align: center; background: transparent; border: none; outline: none; font-size: 14px; padding: 4px; }
+        .t-footer { padding: 16px; background-color: #f5f5f5; }
+        .t-button { width: 100%; background-color: var(--td-brand-color); color: white; text-align: center; padding: 14px; border-radius: var(--td-radius-default); font-size: 16px; }
+    </style>
+</head>
+<body class="flex flex-col h-full">
+    <header class="t-nav">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        <h1 class="t-nav__title">发起抽奖</h1>
+        <div></div>
+    </header>
+
+    <main class="flex-grow overflow-y-auto">
+        <div class="t-cell-group">
+            <div class="t-cell">
+                <div class="t-cell__title">抽奖名称</div>
+                <input type="text" class="t-input" placeholder="请输入抽奖名称（必填）">
+            </div>
+        </div>
+
+        <div class="t-cell-group">
+            <div class="t-cell">
+                <div class="t-cell__title">格子模板</div>
+                <div>
+                    <span class="t-tag" onclick="switchGrid(2)">2x2</span>
+                    <span class="t-tag t-tag--active" onclick="switchGrid(3)">3x3</span>
+                    <span class="t-tag" onclick="switchGrid(4)">4x4</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="px-4 pt-4 text-sm text-gray-500">奖品/内容配置 (支持空值)</div>
+        <div id="grid-2x2" class="grid-container grid-cols-2" style="display: none;">
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+        </div>
+        <div id="grid-3x3" class="grid-container grid-cols-3">
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+        </div>
+        <div id="grid-4x4" class="grid-container grid-cols-4" style="display: none;">
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+            <div class="grid-item"><input placeholder="点击编辑"/></div>
+        </div>
+
+        <div class="t-cell-group">
+            <div class="t-cell">
+                <div class="t-cell__title">冷却时间</div>
+                <input type="text" class="t-input" placeholder="选填，如: 24小时">
+            </div>
+        </div>
+    </main>
+
+    <footer class="t-footer">
+        <button class="t-button">确认创建</button>
+    </footer>
+    <script>
+        function switchGrid(size) {
+            document.getElementById('grid-2x2').style.display = 'none';
+            document.getElementById('grid-3x3').style.display = 'none';
+            document.getElementById('grid-4x4').style.display = 'none';
+
+            document.getElementById('grid-' + size + 'x' + size).style.display = 'grid';
+
+            var tags = document.querySelectorAll('.t-tag');
+            tags.forEach(function(tag) {
+                tag.classList.remove('t-tag--active');
+            });
+
+            event.target.classList.add('t-tag--active');
+        }
+    </script>
+</body>
+</html>

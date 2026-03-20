@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参与抽奖</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --td-brand-color: #0052d9;
+            --td-error-color: #e34d59;
+        }
+        body {
+            background-color: #f5f5f5;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .t-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px 16px;
+            border-bottom: 1px solid #e7e7e7;
+            flex-shrink: 0;
+        }
+        .t-nav__title {
+            font-size: 18px;
+            font-weight: 600;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            gap: 24px;
+        }
+        .lottery-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.9);
+        }
+        .grid-container {
+            display: grid;
+            gap: 8px;
+            width: 90%;
+            max-width: 340px;
+        }
+        .grid-item {
+            background-color: var(--td-error-color);
+            border-radius: 8px;
+            aspect-ratio: 1 / 1;
+        }
+        footer {
+            padding: 16px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .t-button {
+            width: 100%;
+            background-color: var(--td-brand-color);
+            color: white;
+            text-align: center;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body class="h-full">
+    <header class="t-nav">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        <h1 class="t-nav__title">参与抽奖</h1>
+        <div></div>
+    </header>
+
+    <main>
+        <div class="lottery-name">好友的幸运抽奖</div>
+        <div class="grid-container grid-cols-3">
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+        </div>
+    </main>
+
+    <footer>
+        <button class="t-button">开始抽奖</button>
+    </footer>
+</body>
+</html>
